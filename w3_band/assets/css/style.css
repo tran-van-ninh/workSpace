@@ -18,10 +18,11 @@ html{
     height:46px;
     background-color: #000;
     
+    
 }
 
 #nav{
-
+    display: inline-block;
 }
 
 #nav > li{
@@ -58,8 +59,25 @@ html{
     
 }
 
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+
+#header .search-btn{
+    color: #fff;
+    font-size: 20px;
+    float: right;
+    line-height: 46px;
+    padding: 0 21px;
+    cursor: pointer;
+}
+
+#header .search-btn:hover{
+    background-color: #f44336;
+}
+
 #nav li:hover .subnav {
-    display: block;
+    display: inline-block;
 }
 
 #nav .subnav a{
