@@ -66,6 +66,7 @@ html{
     right:0px;
     z-index: 1;
     overflow: hidden;
+    /* overflow: visible; */
 }
 
 #nav{
@@ -110,17 +111,25 @@ html{
     font-size: 12px;
 }
 
-#header .search-btn{
+#header .search-btn ,.mobile-menu-btn{
     color: #fff;
     font-size: 20px;
     float: right;
     line-height: 46px;
     padding: 0 21px;
-    cursor: pointer;
+    
 }
 
-#header .search-btn:hover{
+#header .search-btn:hover {
     background-color: #f44336;
+    cursor: pointer;
+}
+.mobile-menu-btn:hover{
+    background-color:#ccc;
+
+}
+.mobile-menu-btn:hover .menu-icon{
+    color: #000;
 }
 
 #nav li:hover .subnav {
@@ -254,6 +263,7 @@ html{
     font-size: 15px;
     padding: 11px 16px;
     border-bottom: 1px solid #ddd;
+    
 }
 
 .tickets-list .sold-out{
@@ -518,6 +528,7 @@ header.modal-header {
     #nav > li{
         display: block;
     }
+    
     #header .search-btn{
         display: none;
     }
