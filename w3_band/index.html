@@ -176,7 +176,7 @@
           <h2 class="section-heading">CONTACT</h2>
           <p class="section-sub-heading">Fan? Drop a note!</p>
           <div class="row contact-content">
-            <div class="col col-half contact-info">
+            <div class="col col-half contact-info s-col-full">
               <p><i class="ti-location-pin"></i>Chicago, US</p>
               <p><i class="ti-mobile"></i>Phone: +00 151515</p>
               <p><i class="ti-email"></i>Email: mail@mail.com</p>
@@ -298,18 +298,34 @@
         event.stopPropagation();
       });
 
-
       var header = document.getElementById("header");
       var mobileMenu = document.getElementById("mobile-menu");
       var headerHeight = header.clientHeight;
-      mobileMenu.onclick = function(){
-        var isClose = header.clientHeight === headerHeight
-        if(isClose){
-            header.style.height = "auto";
-           
-        }else{
-            header.style.height = "46px";
-           
+
+      //Đóng mở mobile menu
+      mobileMenu.onclick = function () {
+        var isClose = header.clientHeight === headerHeight;
+        if (isClose) {
+          header.style.height = "auto";
+          // header.style.overflow = "hidden";
+        } else {
+          header.style.height = "46px";
+          // header.style.overflow = "visible"
+        }
+      };
+
+      // Tự động đóng khi chọn menu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      for(var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+        menuItem.onclick = function(event) {
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains("subnav");
+            console.log(isParentMenu)
+           if(!isParentMenu){
+            header.style.height = null;
+           }else{
+                event.preventDefault();
+           }
         }
       }
     </script>

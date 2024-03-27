@@ -65,7 +65,7 @@ html{
     left:0px;
     right:0px;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* overflow: visible; */
 }
 
@@ -118,6 +118,13 @@ html{
     line-height: 46px;
     padding: 0 21px;
     
+}
+
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
 }
 
 #header .search-btn:hover {
@@ -525,15 +532,73 @@ header.modal-header {
 
 /* Mobile */
 @media (max-width: 740px){
+    #header{
+       overflow: hidden;
+    }
+    #nav{
+        display: block;
+    }
     #nav > li{
         display: block;
+    }
+
+    #nav li a{
+        padding: 1px 24px;
+    }
+
+    #nav >li:first-child{
+        display: inline-block;
+    }
+
+    #nav .subnav{
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a{
+        color: #fff;
+        padding: 5px 41px;
     }
     
     #header .search-btn{
         display: none;
     }
+
+    #header .mobile-menu-btn{
+        display: block;
+    }
     .modal-container{
         max-width: calc(100% - 16px);
+    }
+
+    #content .member-list {
+        margin-top: 15px;
+    }
+
+    #content .member-item{
+        width: 100%;
+        margin-top: 32px;
+    }
+    #content .member-img {
+        width: 60%;
+        border-radius: 4px;
+    }
+    .places-list {
+        /* margin: 32px -8px 48px; */
+        margin-top: 16px;
+    }
+    .place-item {
+        margin-top: 16px;
+        padding: 0 8px;
+        width: 100%;
+    }
+    .col-half {
+        width: 100%;
+    }
+    .col {
+       
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
 }
