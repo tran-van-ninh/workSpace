@@ -600,5 +600,11 @@ header.modal-header {
         padding-left: 8px;
         padding-right: 8px;
     }
+    .s-mt-8{
+        margin-top: 8px;
+    }
+    .width-full{
+        width: 100%;
+    }
 
 }
